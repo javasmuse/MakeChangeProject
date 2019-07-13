@@ -11,6 +11,7 @@ public class MakeChange {
 		System.out.println("    Tiujana Tacos 25¢  ~  Tequilla Sips 75¢  ~   Dos Equis $2.33  ~   Pet snacks $1.15  ");
 		System.out.println("\n        Cucumbers $2.25   ~  Hummus $3.60  ~  Kiwi 60¢  ~  Pokémon Cards $4.24");
 		System.out.println(" \n\n ~~~~~   and many more items      Please pay at the Automatic Register.  ");
+		System.out.println("\n\n***Please note, \nAutomatic Register does not accept purchases over $20.00. ");
 
 		autoRegister();
 	}
@@ -23,14 +24,23 @@ public class MakeChange {
 		double totalCost = kb.nextDouble();
 		System.out.println("\nHow much is your payment? \n(i.e. 15.00)");
 		double amountPaid = kb.nextDouble();
+		if (amountPaid > 20.00) {
+			//insert counter for humor "If you really must have all that stuff, take the tacos for free and enter a lower total cost."
+			System.out.println("Sorry I can't accept such a large purchase, buy something cheaper. ");
+		}
+		else; 
 
 		if (amountPaid > totalCost) {
 			double input = amountPaid - totalCost;
+			System.out.print("\nYour purchase is: "); 
+			System.out.printf("%4.2f", totalCost );
+			System.out.print("\nAmount tendered is: ");
+			System.out.printf("%4.2f", amountPaid );
 			doTransaction(input);
 		} else if (amountPaid == totalCost) {
-			System.out.println("Thank you. No change needed. Have a Nice Day! ");
+			System.out.println("\nThank you. No change needed. Have a Nice Day! ");
 		} else {
-			System.out.println("Insufficient funds. \n Please add more money and try again ");
+			System.out.println("\nInsufficient funds. \n Please add more money and try again ");
 			autoRegister();
 		}
 
@@ -38,18 +48,17 @@ public class MakeChange {
 
 	public static void doTransaction(double input) {
 		int convertedChange = (int) (input * 100);
-		System.out.println("You paid: " + convertedChange + "\nThank you");
 
 		int change = convertedChange / 2000;
 		int remains = convertedChange % 2000;
 		int twenties = change; // number of twenties
 		change = remains; // what's left
 
-		int tens = change / 1000; // number of tens
+		int ten = change / 1000; // number of tens
 		remains = change % 1000; // what's left
 		change = remains;
 
-		int fives = change / 500; // number of fives
+		int five = change / 500; // number of fives
 		remains = change % 500; // what's left
 		change = remains;
 
@@ -73,9 +82,47 @@ public class MakeChange {
 
 		// boolean insert here to account for only printing the necessary amounts back
 
-		System.out.println("Your change is\n " + twenties + " twenties \n" + tens + " tens\n " + fives + " fives\n "
-				+ ones + " ones \n " + quarters + " quarters \n" + dimes + " dimes \n" + nickels + " nickels\n "
-				+ pennies + " pennies \n");
+		System.out.println("\n\nYour change is:\n ");
+		if (ten != 0) {
+			System.out.println("Ten: " + ten);
+		}
+		if (five != 0) {
+			System.out.println("Five: " + five);
+		}
+		if (ones >= 2) {
+			System.out.println("Ones: " + ones);
+		}
+		if (ones == 1) {
+			System.out.println("One: " + ones);
+		}
+		if (quarters >= 2) {
+			System.out.println("Quarters: " + quarters);
+		}
+		if (quarters == 1) {
+			System.out.println("Quarter: " + quarters);
+		}
+		if (dimes >= 2) {
+			System.out.println("Dimes: " + dimes);
+		}
+		if (dimes == 1) {
+			System.out.println("Dime: " + dimes);
+		}
+		if (nickels >= 2) {
+			System.out.println("Nickels: " + nickels);
+		}
+		if (nickels == 1) {
+			System.out.println("Nickel: " + nickels);
+		}
+		if (pennies >= 2) {
+			System.out.println("Pennies: " + pennies);
+		}
+		if (pennies == 1) {
+			System.out.println("Penny: " + pennies);
+		}
+		
+			
+		{
+		}
 	}
 
 }
