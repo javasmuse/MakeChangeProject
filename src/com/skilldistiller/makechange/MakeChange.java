@@ -6,8 +6,6 @@ public class MakeChange {
 
 		public static void main(String[] args) {
 					Scanner kb = new Scanner(System.in);
-					
-					String item; 
 			
 			System.out.println("§~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Welcome to Lewy's Snack Shop~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~§");
 			System.out.println(" \n  Snickers $1.25 ~ Skittles ~ $1.50 ~ Doritos 75¢ ~ Cheerwine $2.00 ~ Sprite $3.20 \n");
@@ -15,31 +13,23 @@ public class MakeChange {
 			System.out.println("\n        Cucumbers $2.25   ~  Hummus $3.60  ~  Kiwi 60¢  ~  Pokémon Cards $4.24");
 			System.out.println(" \n\n ~~~~~   and many more items      Please pay at the Automatic Register.  ");
 			// Do while loop here
+			
+			
 			System.out.println("\n\nAUTOMATIC REGISTER");
 			System.out.println("\nWhat is the total cost of your purchase? \n (i.e. 12.73) \n$");
-			item = kb.next(); 
+			double totalCost = kb.nextDouble(); 
+			System.out.println("\nHow much is your payment? \n(i.e. 15.00)");
+			double amountPaid = kb.nextDouble(); 
 			
-			double amountPaid; 
+			if (amountPaid >= totalCost) {
+				 double input = amountPaid - totalCost; 
+			}
+			else {
+				System.out.println("Insufficient funds. \n Please add more money and try again ");
+				
+				
 			 
 			
-			switch (item) { 
-			case "Snickers":
-				System.out.println("That will be $1.25, please.");
-				break;
-			case "Skittles": 
-				System.out.println("That will be $1.50, please.");
-				break;
-			case "Doritos": 
-				System.out.println("That will be .75¢, please.");
-				break;
-			case "Cheerwine":
-				System.out.println("That will be $2.00, please.");
-				break;
-			case "Sprite": 
-				System.out.println("That will be $3.20, please.");
-				break;
-			default: 
-				System.out.println("Sorry that's not an item we sell.\n Please enter a purchasable item:");
 				//return to loop - or quit 
 			}
 				
