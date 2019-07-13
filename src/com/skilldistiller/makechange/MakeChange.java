@@ -9,12 +9,14 @@ public class MakeChange {
 					
 					String item; 
 			
-			System.out.println("~~~~Welcome to Lewy's Snack Shop~~~~~~\n");
-			System.out.println("\nSnickers $1.25 ~ Skittles ~ $1.50 ~ Doritos .75¢ ~ Cheerwine $2.00 ~ Sprite $3.20\n\n");
-			
-			System.out.println("Anytime you would like to leave the shop, please press Q\n\n");
+			System.out.println("§~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Welcome to Lewy's Snack Shop~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~§");
+			System.out.println(" \n  Snickers $1.25 ~ Skittles ~ $1.50 ~ Doritos 75¢ ~ Cheerwine $2.00 ~ Sprite $3.20 \n");
+			System.out.println("    Tiujana Tacos 25¢  ~  Tequilla Sips 75¢  ~   Dos Equis $2.33  ~   Pet snacks $1.15  ");
+			System.out.println("\n        Cucumbers $2.25   ~  Hummus $3.60  ~  Kiwi 60¢  ~  Pokémon Cards $4.24");
+			System.out.println(" \n\n ~~~~~   and many more items      Please pay at the Automatic Register.  ");
 			// Do while loop here
-			System.out.println("What would you like to purchase? ");
+			System.out.println("\n\nAUTOMATIC REGISTER");
+			System.out.println("\nWhat is the total cost of your purchase? \n (i.e. 12.73) \n$");
 			item = kb.next(); 
 			
 			double amountPaid; 
@@ -88,7 +90,7 @@ public class MakeChange {
 			
 			//boolean insert here to account for only printing the necessary amounts back
 			
-			System.out.println("Your change is " + twenties + " twenties \n" + tens + " tens\n " + fives + " fives\n "+ ones + "ones \n "
+			System.out.println("Your change is\n " + twenties + " twenties \n" + tens + " tens\n " + fives + " fives\n "+ ones + " ones \n "
 					+ quarters + " quarters \n"+ dimes + " dimes \n"+ nickels + " nickels\n "+ pennies + " pennies \n");
 			
 			
