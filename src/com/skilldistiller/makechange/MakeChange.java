@@ -13,11 +13,13 @@ public class MakeChange {
 		System.out.println(" \n\n ~~~~~   and many more items      Please pay at the Automatic Register.  ");
 		System.out.println("\n\n***Please note, \nAutomatic Register does not accept purchases over $20.00. ");
 
-		autoRegister();
-		
+		autoRegister();  
 	}
+		
+// The autoRegister method accepts the Total Amount and Total Paid, decides if it is okay and if change is needed
+// if change is needed the doTransaction method is called, if not possible loops back through by recalling itself
 
-	public static void autoRegister() {
+		public static void autoRegister() {
 		Scanner kb = new Scanner(System.in);
 
 		System.out.println("\n\nAUTOMATIC REGISTER");
@@ -29,8 +31,7 @@ public class MakeChange {
 		} else
 			System.out.println("\nHow much is your payment? \n(i.e. 15.00)");
 		double amountPaid = kb.nextDouble();
-		;
-
+		kb.close();
 		if (amountPaid > totalCost) {
 			double input = amountPaid - totalCost;
 			System.out.print("\nYour purchase is: ");
@@ -44,20 +45,14 @@ public class MakeChange {
 			System.out.println("\nInsufficient funds. \n Please add more money and try again ");
 			autoRegister();
 		}
-
 	}
 
 	public static void doTransaction(double input) {
 		int convertedChange = (int) (input * 100);
 
-		int change = convertedChange / 2000;
-		int remains = convertedChange % 2000;
-		int twenties = change; // number of twenties
-		change = remains; // what's left
-
-		int ten = change / 1000; // number of tens
-		remains = change % 1000; // what's left
-		change = remains;
+		int ten = convertedChange / 1000; // number of tens
+		int remains = ten % 1000; // what's left
+		int change = remains;
 
 		int five = change / 500; // number of fives
 		remains = change % 500; // what's left
@@ -82,6 +77,7 @@ public class MakeChange {
 		int pennies = change; // finally the pennies
 
 		System.out.println("\n\nYour change is:\n ");
+		
 		if (ten != 0) {
 			System.out.println("Ten: " + ten);
 		}
