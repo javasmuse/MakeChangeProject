@@ -14,28 +14,29 @@ public class MakeChange {
 		System.out.println("\n\n***Please note, \nAutomatic Register does not accept purchases over $20.00. ");
 
 		autoRegister();
+		
 	}
-	
+
 	public static void autoRegister() {
 		Scanner kb = new Scanner(System.in);
 
 		System.out.println("\n\nAUTOMATIC REGISTER");
 		System.out.println("\nWhat is the total cost of your purchase? \n (i.e. 12.73) \n$");
 		double totalCost = kb.nextDouble();
-		System.out.println("\nHow much is your payment? \n(i.e. 15.00)");
-		double amountPaid = kb.nextDouble();
-		if (amountPaid > 20.00) {
-			//insert counter for humor "If you really must have all that stuff, take the tacos for free and enter a lower total cost."
+		if (totalCost > 20.00) {
 			System.out.println("Sorry I can't accept such a large purchase, buy something cheaper. ");
-		}
-		else; 
+			autoRegister();
+		} else
+			System.out.println("\nHow much is your payment? \n(i.e. 15.00)");
+		double amountPaid = kb.nextDouble();
+		;
 
 		if (amountPaid > totalCost) {
 			double input = amountPaid - totalCost;
-			System.out.print("\nYour purchase is: "); 
-			System.out.printf("%4.2f", totalCost );
+			System.out.print("\nYour purchase is: ");
+			System.out.printf("%4.2f", totalCost);
 			System.out.print("\nAmount tendered is: ");
-			System.out.printf("%4.2f", amountPaid );
+			System.out.printf("%4.2f", amountPaid);
 			doTransaction(input);
 		} else if (amountPaid == totalCost) {
 			System.out.println("\nThank you. No change needed. Have a Nice Day! ");
@@ -80,8 +81,6 @@ public class MakeChange {
 
 		int pennies = change; // finally the pennies
 
-		// boolean insert here to account for only printing the necessary amounts back
-
 		System.out.println("\n\nYour change is:\n ");
 		if (ten != 0) {
 			System.out.println("Ten: " + ten);
@@ -119,8 +118,8 @@ public class MakeChange {
 		if (pennies == 1) {
 			System.out.println("Penny: " + pennies);
 		}
-		
-			
+		System.out.println("\n Thank You & Have a Nice Day! ");
+
 		{
 		}
 	}
